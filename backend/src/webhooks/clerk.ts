@@ -27,6 +27,7 @@ export async function clerkWebhookHandler(req: Request, res: Response) {
 
     // throws if signature is wrong or body was tampered with; only then we trust evt.
     const evt = await verifyWebhook(request, { signingSecret: env.CLERK_WEBHOOK_SECRET });
+    
 
     if (evt.type === "user.created" || evt.type === "user.updated") {
       const u = evt.data;
@@ -60,6 +61,7 @@ export async function clerkWebhookHandler(req: Request, res: Response) {
         await db.delete(users).where(eq(users.clerkUserId, id));
       }
     }
+    
 
     res.json({ ok: true });
   } catch (err) {
