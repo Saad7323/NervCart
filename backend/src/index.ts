@@ -5,12 +5,11 @@ import "dotenv/config";
 import fs from "node:fs";
 import path from "node:path";
 
-
-
 import { clerkMiddleware } from "@clerk/express";
 import { clerkWebhookHandler } from "./webhooks/clerk";
 import { getEnv } from "./lib/env";
 import keepAliveCron from "./lib/cron";
+
 const env=getEnv();
 const app=express();
 
