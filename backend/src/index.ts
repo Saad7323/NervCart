@@ -13,6 +13,7 @@ import keepAliveCron from "./lib/cron";
 import productRouter from "./routes/productRouter";
 import meRouter from "./routes/meRouter";
 import streamRouter from "./routes/streamRouter";
+import checkoutRouter from "./routes/checkoutRouter";
 
 
 const env=getEnv();
@@ -35,6 +36,7 @@ app.get("/health", (_req, res) => {
  app.use("/api/me",meRouter);
  app.use("/api/products",productRouter);
  app.use("/api/stream",streamRouter);
+ app.use("/api/checkout",checkoutRouter);
 
 
 const publicDir = path.join(process.cwd(), "public");
