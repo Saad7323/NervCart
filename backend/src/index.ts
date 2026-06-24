@@ -24,6 +24,9 @@ const rawJson = express.raw({ type: "application/json", limit: "1 mb" });
 app.post("/webhook/clerk", rawJson, (req, res) => {
   void clerkWebhookHandler(req, res);
 });
+app.post("/webhook/polar", rawJson, (req, res) => {
+  void polarWebhookHandler(req, res);
+});
 
 app.use(express.json());
 app.use(cors()); 
