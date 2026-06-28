@@ -1,7 +1,10 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import { useCart } from "../store/cart";
 
 function Layout({ children }) {
+
+    
   return (
     <div className="flex min-h-svh flex-col bg-base-200 text-base-content">
       <Navbar />
